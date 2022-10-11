@@ -1,0 +1,126 @@
+:root {
+  --primaryColor: #dabfff;
+  --secondaryColor: #4f518c;
+  --textColor: #907ad6;
+  --lightColor: #7fdeff;
+  --darkColor: #2c2a4a;
+}
+
+@font-face {
+  font-family: "vazir";
+  src: url("/fonts/vazir.ttf") format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: vazir;
+  font-weight: normal;
+  direction: rtl;
+  text-align: right;
+}
+
+body {
+  margin: 0;
+  font-family: inherit;
+}
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--darkColor);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--lightColor);
+  border-radius: 25px;
+  box-shadow: 0 0 5px var(--lightColor);
+}
+
+header {
+  width: 100%;
+  height: auto;
+  background-color: var(--darkColor);
+  color: var(--primaryColor);
+  text-align: center;
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1,
+header p {
+  padding: 0;
+  margin: 0;
+  width: 50%;
+}
+main {
+  padding: 50px 75px;
+  text-align: justify;
+}
+
+.menu-wrapper {
+  position: fixed;
+  left: -200px;
+  top: 0;
+  width: 200px;
+  height: 100vh;
+  background-color: var(--secondaryColor);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 150px 0;
+  gap: 25px;
+  transition: all 0.5s linear;
+}
+.menu-wrapper.active {
+  left: 0;
+}
+
+.menu-wrapper .img {
+  width: 100px;
+  height: 100px;
+  box-shadow: 0 0 5px var(--lightColor);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  color: var(--lightColor);
+}
+.menu-wrapper .menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.menu-wrapper .menu a {
+  text-decoration: none;
+  color: var(--lightColor);
+}
+
+.icon {
+  position: absolute;
+  top: 50px;
+  right: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--secondaryColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--lightColor);
+  cursor: pointer;
+}
+.icon > i {
+  animation: fa-spin 5s linear infinite;
+}
